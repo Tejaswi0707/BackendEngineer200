@@ -15,6 +15,21 @@ public class Student {
     public String getStudentId(){return studentId;}
     public int getBooksBorrowed(){return booksBorrowed;}
     
+    public void borrowBook()
+    {
+        booksBorrowed+=1;
+    }
+    public void returnBook()
+    {
+        if(booksBorrowed>0)
+        {
+            booksBorrowed-=1;
+            return;
+        }
+        System.out.println("No books to return!");
+    }
+    
+    
     public void display()
     {
         System.out.println("Student Name:"+name+"\nStudent Id:"+studentId+"\nBooks borrowed:"+booksBorrowed);

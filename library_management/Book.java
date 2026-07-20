@@ -21,12 +21,14 @@ public class Book {
             return;
         }
         borrower=student;
+        borrower.borrowBook();
         available=false;
         System.out.println("Book borrowed successfully!");
     }
 
     public void returnBook()
     {
+        borrower.returnBook();
         borrower=null;
         available=true;
     }
