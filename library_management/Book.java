@@ -13,6 +13,8 @@ public class Book {
         this.isbn=isbn;
     }
 
+    public String getTitle(){return title;}
+
     public void borrow(Student student)
     {
         if (borrower!=null){
@@ -38,6 +40,5 @@ public class Book {
             return;
         }
         System.out.println("Available");  
-    }
-    
+    } 
 }

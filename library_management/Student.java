@@ -5,11 +5,10 @@ public class Student {
     private String studentId;
     private int booksBorrowed;
 
-    Student(String name, String studentId, int booksBorrowed)
+    Student(String name, String studentId)
     {
         this.name=name;
         this.studentId=studentId;
-        this.booksBorrowed=booksBorrowed;
     }
     public String getName(){return name;}
     public String getStudentId(){return studentId;}
