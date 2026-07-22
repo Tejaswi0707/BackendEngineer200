@@ -4,7 +4,6 @@ public class Book {
     private String title;
     private String author;
     private String isbn;
-    private boolean available=true;
     private Student borrower;
 
     Book(String title, String author, String isbn)
@@ -21,8 +20,7 @@ public class Book {
             return;
         }
         borrower=student;
-        borrower.borrowBook();
-        available=false;
+        borrower.borrow();
         System.out.println("Book borrowed successfully!");
     }
 
@@ -30,7 +28,6 @@ public class Book {
     {
         borrower.returnBook();
         borrower=null;
-        available=true;
     }
 
     public void display()
@@ -38,11 +35,9 @@ public class Book {
         if (borrower!=null)
         {
             System.out.println("Borrower name:"+borrower.getName());
+            return;
         }
-        else
-        {
-            System.out.println("Available");
-        }
+        System.out.println("Available");  
     }
     
 }

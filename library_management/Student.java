@@ -15,7 +15,7 @@ public class Student {
     public String getStudentId(){return studentId;}
     public int getBooksBorrowed(){return booksBorrowed;}
     
-    public void borrowBook()
+    public void borrow()
     {
         booksBorrowed+=1;
     }
