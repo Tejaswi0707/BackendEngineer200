@@ -41,4 +41,13 @@ public class Library {
             book.borrow(student);
         }
     }    
+
+    public Book findBookByIsbn(String isbn)
+    {
+        for (Book book: books)
+        {
+            if(book.getIsbn().equals(isbn)){return book;}
+        }
+        return null;
+    }
 }

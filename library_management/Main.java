@@ -29,6 +29,11 @@ public class Main {
         library.displayBooks();
         library.displayStudents();
 
+        Book found=library.findBookByIsbn("12345");
+        if (found!=null)
+        {System.out.println("\nFound: "+found.getTitle());}
+        else {System.out.println("Book not found.");}
+
         sc.close();
     }
     
