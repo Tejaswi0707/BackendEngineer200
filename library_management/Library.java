@@ -8,22 +8,34 @@ public class Library {
 
     public void registerBook(Book book)
     {
-        if (findBookByIsbn(book.getIsbn())==null)
+        if (book==null)
         {
-            books.add(book);
+            System.out.println("Invalid book.");
             return;
         }
-        System.out.println("Book already registered.");
+        if (findBookByIsbn(book.getIsbn())!=null)
+        {
+            System.out.println("Book already registerd.");
+            return;
+        }
+        books.add(book);
+        System.out.println("Book registered.");
     }
 
     public void registerStudent(Student student)
     {
-        if(findStudentById(student.getStudentId())==null)
+        if (student == null)
         {
-            students.add(student);
+            System.out.println("Invalid book.");
             return;
         }
-        System.out.println("Student already registered.");
+        if(findStudentById(student.getStudentId())!=null)
+        {
+            System.out.println("Student already registered.");
+            return;
+        }
+        students.add(student);
+        System.out.println("Book registered.");
     }
 
     public void displayBooks()
