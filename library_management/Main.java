@@ -1,40 +1,37 @@
 package library_management;
-import java.util.*;
 
 public class Main {
     public static void main(String args[])
     {
-        Scanner sc=new Scanner(System.in);
         Library library=new Library();
-        int numOfBooks=sc.nextInt();sc.nextLine();
-        for (int i=0;i<numOfBooks;i++)
-        {
-            String title=sc.nextLine();
-            String author=sc.nextLine();
-            String isbn=sc.nextLine();
 
-            Book book=new Book(title, author, isbn);
-            library.registerBook(book);
-        }
-        int numOfStudents=sc.nextInt();sc.nextLine();
-        for (int i=0;i<numOfStudents;i++)
-        {
-            String name=sc.nextLine();
-            String studentId=sc.nextLine();
+        //Register books
+        Book book1=new Book("Harry Potter","J.K.Rowling", "ISBN001");
+        Book book2=new Book("Lord of Rings", "CJ Nowmy", "ISBN002");
+        
 
-            Student student=new Student(name, studentId);
-            library.registerStudent(student);
-        }
+        library.registerBook(book1);
+        library.registerBook(book2);
+        
 
+        //Register students
+        Student student1 = new Student("Tejaswi", "S001");
+        Student student2 = new Student("Divya", "S002");
+        Student student=new Student("Tejaswi", "S001");
+
+        library.registerStudent(student1);
+        library.registerStudent(student2);
+        library.registerStudent(student);
+
+        System.out.println("\nBooks:");
         library.displayBooks();
+
+        System.out.println();
+
+        System.out.println("Students:");
         library.displayStudents();
 
-        Book found=library.findBookByIsbn("12345");
-        if (found!=null)
-        {System.out.println("\nFound: "+found.getTitle());}
-        else {System.out.println("Book not found.");}
-
-        sc.close();
+      
     }
     
 }

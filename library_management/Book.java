@@ -15,6 +15,11 @@ public class Book {
 
     public String getTitle(){return title;}
     public String getIsbn(){return isbn;}
+    public String getAuthor(){return author;}
+    public String isAvailable(){
+        if (borrower==null){return "Available";}
+        else{return "Not Available";}
+    }
 
     public void borrow(Student student)
     {

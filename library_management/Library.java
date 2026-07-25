@@ -8,30 +8,47 @@ public class Library {
 
     public void registerBook(Book book)
     {
-        books.add(book);
+        if (findBookByIsbn(book.getIsbn())==null)
+        {
+            books.add(book);
+            return;
+        }
+        System.out.println("Book already registered.");
     }
 
     public void registerStudent(Student student)
     {
-        students.add(student);
+        if(findStudentById(student.getStudentId())==null)
+        {
+            students.add(student);
+            return;
+        }
+        System.out.println("Student already registered.");
     }
 
     public void displayBooks()
     {
-        System.out.println("List of Books:\n");
         for(Book book: books)
         {
-            System.out.println(book.getTitle());
+            System.out.println("Title: "+book.getTitle());
+            System.out.println("Author: "+book.getAuthor());
+            System.out.println("ISBN: "+book.getIsbn());
+            System.out.println("Status: "+book.isAvailable());
+            System.out.println();
         }
+        
     }
 
     public void displayStudents()
     {
-        System.out.println("List of Students:\n");
         for(Student student: students)
         {
-            System.out.println(student.getName());
+            System.out.println("Name: "+student.getName());
+            System.out.println("Student ID: "+student.getStudentId());
+            System.out.println("Books Borrowed: "+student.getBooksBorrowed());
+            System.out.println();
         }
+        
     }
 
     public void borrowBook(Student student, Book book)
@@ -47,6 +64,15 @@ public class Library {
         for (Book book: books)
         {
             if(book.getIsbn().equals(isbn)){return book;}
+        }
+        return null;
+    }
+
+    public Student findStudentById(String id)
+    {
+        for(Student student: students)
+        {
+            if(student.getStudentId().equals(id)){return student;}
         }
         return null;
     }
