@@ -19,17 +19,17 @@ public class Main {
         Student student2 = new Student("Divya", "S002");
         Student student=new Student("Tejaswi", "S001");
 
-        library.registerStudent(student1);
-        library.registerStudent(student2);
-        library.registerStudent(student);
+        library.registerMember(student1);
+        library.registerMember(student2);
+        library.registerMember(student);
 
         System.out.println("\nBooks:");
         library.displayBooks();
 
         System.out.println();
 
-        System.out.println("Students:");
-        library.displayStudents();
+        System.out.println("Members:");
+        library.displayMembers();
 
       
     }

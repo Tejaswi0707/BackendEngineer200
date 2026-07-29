@@ -4,7 +4,7 @@ import java.util.*;
 public class Library {
 
     private ArrayList<Book> books = new ArrayList<>();
-    private ArrayList<Student> students=new ArrayList<>();
+    private ArrayList<Member> members=new ArrayList<>();
 
     public void registerBook(Book book)
     {
@@ -22,20 +22,20 @@ public class Library {
         System.out.println("Book registered.");
     }
 
-    public void registerStudent(Student student)
+    public void registerMember(Member member)
     {
-        if (student == null)
+        if (member == null)
         {
-            System.out.println("Invalid book.");
+            System.out.println("Invalid.");
             return;
         }
-        if(findStudentById(student.getStudentId())!=null)
+        if(findMemberById(member.getMemberId())!=null)
         {
-            System.out.println("Student already registered.");
+            System.out.println("Member already registered.");
             return;
         }
-        students.add(student);
-        System.out.println("Book registered.");
+        members.add(member);
+        System.out.println("Member registered.");
     }
 
     public void displayBooks()
@@ -51,23 +51,23 @@ public class Library {
         
     }
 
-    public void displayStudents()
+    public void displayMembers()
     {
-        for(Student student: students)
+        for(Member member: members)
         {
-            System.out.println("Name: "+student.getName());
-            System.out.println("Student ID: "+student.getStudentId());
-            System.out.println("Books Borrowed: "+student.getBooksBorrowed());
+            System.out.println("Name: "+member.getName());
+            System.out.println("Student ID: "+member.getMemberId());
+            System.out.println("Books Borrowed: "+member.getBooksBorrowed());
             System.out.println();
         }
         
     }
 
-    public void borrowBook(Student student, Book book)
+    public void borrowBook(Member member, Book book)
     {
-        if(student!=null && book!=null)
+        if(member!=null && book!=null)
         {
-            book.borrow(student);
+            book.borrow(member);
         }
     }    
 
@@ -80,11 +80,11 @@ public class Library {
         return null;
     }
 
-    public Student findStudentById(String id)
+    public Member findMemberById(String id)
     {
-        for(Student student: students)
+        for(Member member: members)
         {
-            if(student.getStudentId().equals(id)){return student;}
+            if(member.getMemberId().equals(id)){return member;}
         }
         return null;
     }

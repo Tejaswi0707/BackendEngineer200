@@ -4,7 +4,7 @@ public class Book {
     private String title;
     private String author;
     private String isbn;
-    private Student borrower;
+    private Member borrower;
 
     Book(String title, String author, String isbn)
     {
@@ -21,14 +21,19 @@ public class Book {
         else{return "Not Available";}
     }
 
-    public void borrow(Student student)
+    public void borrow(Member member)
     {
         if (borrower!=null){
             System.out.println("Book already borrowed.");
             return;
         }
-        borrower=student;
-        borrower.borrow();
+        if (!member.canBorrow())
+        {
+            System.out.println("Borrow limit reached.");
+            return;
+        }
+        borrower=member;
+        member.borrow();
         System.out.println("Book borrowed successfully!");
     }
 
