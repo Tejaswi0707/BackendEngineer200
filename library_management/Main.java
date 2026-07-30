@@ -17,11 +17,11 @@ public class Main {
         //Register students
         Student student1 = new Student("Tejaswi", "S001");
         Student student2 = new Student("Divya", "S002");
-        Student student=new Student("Tejaswi", "S001");
+       
 
         library.registerMember(student1);
         library.registerMember(student2);
-        library.registerMember(student);
+        
 
         System.out.println("\nBooks:");
         library.displayBooks();

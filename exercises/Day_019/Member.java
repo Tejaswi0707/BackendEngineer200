@@ -1,7 +1,6 @@
 package exercises.Day_019;
 
 public abstract class Member {
-
     private String name;
     private String memberId;
     private int booksBorrowed;
@@ -12,17 +11,8 @@ public abstract class Member {
         this.memberId=memberId;
     }
 
-    public void borrow()
-    {
-        booksBorrowed+=1;
-    }
-
-    public void returnBook()
-    {
-        if(booksBorrowed>0){
-            booksBorrowed-=1;
-        }
-    }
+    public void borrow(){booksBorrowed+=1;}
+    public void returnBook(){booksBorrowed-=1;}
 
     public abstract int getBorrowLimit();
     
