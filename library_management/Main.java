@@ -13,11 +13,12 @@ public class Main {
         library.registerBook(book1);
         library.registerBook(book2);
         
+        Address address1=new Address("Hyderabad","Telangana");
+        Address address2=new Address("Bangalore","Karnataka");
 
         //Register students
-        Student student1 = new Student("Tejaswi", "S001");
-        Student student2 = new Student("Divya", "S002");
-       
+        Student student1 = new Student("Tejaswi", "S001", address1);
+        Student student2 = new Student("Divya", "S002", address2);
 
         library.registerMember(student1);
         library.registerMember(student2);
@@ -30,6 +31,8 @@ public class Main {
 
         System.out.println("Members:");
         library.displayMembers();
+
+        student1.displayMemberDetails();
 
       
     }
