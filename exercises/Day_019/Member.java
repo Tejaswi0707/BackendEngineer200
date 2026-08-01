@@ -11,6 +11,10 @@ public abstract class Member {
         this.memberId=memberId;
     }
 
+    public String getName(){return name;}
+    public String getMemberId(){return memberId;}
+    public int getBooksBorrowed(){return booksBorrowed;}
+
     public void borrow(){booksBorrowed+=1;}
     public void returnBook(){booksBorrowed-=1;}
 
