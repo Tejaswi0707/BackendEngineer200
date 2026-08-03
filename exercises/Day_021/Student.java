@@ -16,6 +16,7 @@ public class Student {
         if(!(obj instanceof Student)){return false;}
         Student other=(Student) obj;
         return this.name.equals(other.name) && this.age==other.age;
+
     }
     
 }
