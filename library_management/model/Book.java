@@ -1,4 +1,4 @@
-package library_management;
+package library_management.model;
 
 public class Book {
     private String title;
@@ -6,7 +6,7 @@ public class Book {
     private String isbn;
     private Member borrower;
 
-    Book(String title, String author, String isbn)
+    public Book(String title, String author, String isbn)
     {
         this.title=title;
         this.author=author;

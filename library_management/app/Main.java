@@ -1,4 +1,9 @@
-package library_management;
+package library_management.app;
+
+import library_management.model.Address;
+import library_management.model.Book;
+import library_management.model.Student;
+import library_management.service.Library;
 
 public class Main {
     public static void main(String args[])
@@ -8,7 +13,6 @@ public class Main {
         //Register books
         Book book1=new Book("Harry Potter","J.K.Rowling", "ISBN001");
         Book book2=new Book("Lord of Rings", "CJ Nowmy", "ISBN002");
-        
 
         library.registerBook(book1);
         library.registerBook(book2);

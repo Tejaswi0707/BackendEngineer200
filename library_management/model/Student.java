@@ -1,4 +1,6 @@
-package library_management;
+package library_management.model;
+
+import library_management.interfaces.Borrowable;
 
 public class Student extends Member implements Borrowable{
 

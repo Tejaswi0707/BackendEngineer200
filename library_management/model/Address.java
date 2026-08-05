@@ -1,10 +1,10 @@
-package library_management;
+package library_management.model;
 
 public class Address {
     private String city;
     private String state;
 
-    Address(String city, String state)
+    public Address(String city, String state)
     {
         this.city=city;
         this.state=state;

@@ -1,4 +1,4 @@
-package library_management;
+package library_management.model;
 
 public abstract class Member {
 

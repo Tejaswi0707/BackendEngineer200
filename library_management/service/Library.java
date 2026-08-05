@@ -1,5 +1,9 @@
-package library_management;
+package library_management.service;
 import java.util.*;
+
+import library_management.model.Book;
+import library_management.model.Member;
+import library_management.util.ValidationUtil;
 
 public class Library {
 
@@ -8,14 +12,13 @@ public class Library {
 
     public void registerBook(Book book)
     {
-        if (book==null)
-        {
-            System.out.println("Invalid book.");
+        if(!ValidationUtil.isValidIsbn(book.getIsbn())){
+            System.out.println("Invalid ISBN.");
             return;
         }
-        if (findBookByIsbn(book.getIsbn())!=null)
+        if(findBookByIsbn(book.getIsbn())!=null)
         {
-            System.out.println("Book already registerd.");
+            System.out.println("Book already registered.");
             return;
         }
         books.add(book);
