@@ -6,3 +6,4 @@ public interface Borrowable {
     void returnBook();
     
 }
+
