@@ -3,6 +3,7 @@ package exercises.Day_023;
 public class Main {
     public static void main(String args[])
     {
+        // Create an instance of the enum
         Day today=Day.MONDAY;
         System.out.println(today);
 
