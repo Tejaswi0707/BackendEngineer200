@@ -9,7 +9,6 @@ This is a simple class that represents an animal with a name. It has a private f
  */
 
 
-
 public class Animal{
     private String name;
     public String getName(){
@@ -20,3 +19,5 @@ public class Animal{
         this.name=name;
     }
 }
+
+
