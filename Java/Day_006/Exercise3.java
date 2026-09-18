@@ -17,5 +17,4 @@ public class Exercise3 {
         Exercise3 e =new Exercise3();
         System.out.println(e.x);
     }
-    
 }
